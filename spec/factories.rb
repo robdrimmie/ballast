@@ -9,3 +9,8 @@ end
 Factory.sequence :email do |n|
   "person-#{n}@example.com"
 end
+
+Factory.define :weight do |weight|
+  weight.weight 222.2
+  weight.association :user
+end

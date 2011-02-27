@@ -4,6 +4,9 @@
     <span class="user_name">
       <%= current_user.name %>
     </span>
+    <span class="weights">
+      <%= pluralize(current_user.weights.count, "weight") %>
+    </span>
   </a>
 </div>
 

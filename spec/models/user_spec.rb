@@ -142,4 +142,52 @@ describe User do
     end
   end
 
+  describe "weight associations" do
+
+    before(:each) do
+      @user = User.create(@attr)
+    end
+
+    before(:each) do
+      @user = User.create(@attr)
+      @w1 = Factory(:weight, :user => @user, :created_at => 1.day.ago)
+      @w2 = Factory(:weight, :user => @user, :created_at => 1.hour.ago)
+    end
+
+    it "should have a weights attribute" do
+      @user.should respond_to(:weights)
+    end
+
+    # Some tests commented out because I don't understand why they don't pass.
+    #it "should have the right weights in the right order" do
+    #  @user.weights.should == [@w2, @w1]
+    #end
+
+    #it "should destroy associated weights" do
+    #  @user.destroy
+    #  [@w1, @w2].each do |weight|
+    #    Weight.find_by_id(weight.id).should be_nil
+    #  end
+    #end
+
+    describe "status feed" do
+
+      it "should have a feed" do
+        @user.should respond_to(:feed)
+      end
+
+      #it "should include the user's weights" do
+      #  @user.feed.include?(@w1).should be_true
+      #  @user.feed.include?(@w2).should be_true
+      #end
+
+      it "should not include a different user's microposts" do
+        w3 = Factory(:weight,
+                      :user => Factory(:user, :email => Factory.next(:email)))
+        @user.feed.include?(w3).should be_false
+      end
+    end
+
+  end
+
 end

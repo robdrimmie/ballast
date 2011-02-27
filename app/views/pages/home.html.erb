@@ -2,6 +2,9 @@
   <table class="front" summary="For signed-in users">
     <tr>
       <td class="main">
+        <h1 class="weight">Current Weight:</h1>
+        <%= render 'shared/weight_form' %>
+        <%= render 'shared/feed' %>
       </td>
       <td class="sidebar round">
         <%= render 'shared/user_info' %>
@@ -12,12 +15,13 @@
   <h1>Sample App</h1>
 
   <p>
-    This is the home page for the
-    <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application.
-  </p>
+    This is the home page for Ballast Line  </p>
 
   <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 <% end %>
 
+<p>
+  It is still almost identical to the <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
+    sample application, from which it was derived.
+</p>
 

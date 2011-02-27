@@ -100,6 +100,15 @@ describe UsersController do
       response.should have_selector("h1>img", :class => "gravatar")
     end
 
+    it "should show the user's weights" do
+      w1 = Factory(:weight, :user => @user, :weight => 222.2)
+      w2 = Factory(:weight, :user => @user, :weight => 111.1)
+      get :show, :id => @user
+      response.should have_selector("span.weight")
+      response.should have_selector("span.weight")
+    end
+
+
   end
 
   describe "GET 'new'" do
