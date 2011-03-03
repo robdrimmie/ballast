@@ -11,17 +11,20 @@
       </td>
     </tr>
   </table>
+  <%= link_to "Sign Out", signout_path, :class => "signout button round" %>  
 <% else %>
-  <h1>Sample App</h1>
+  <%= link_to "Sign up now!", signup_path, :class => "signup button round" %>
+  <%= link_to "Sign in", signin_path, :class => "signin button round" %>
+  <p class="overview">
+    Ballastline is a weight-tracking application. You enter your weight, 
+    and then it gets plotted on a graph. Over time, the line should slope
+    downward if you are losing weight, or upward if you are gaining it.
+  </p>
 
-  <p>
-    This is the home page for Ballast Line  </p>
-
-  <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+  <p class="overview">
+    It is a hobby project, being developed by Rob Drimmie. I have hopes 
+    for future functionality, but I am not going to talk about them because
+    I am not interested in promising anything. The codebase is available
+    at <a href="https://github.com/rmdrimmie/ballast">https://github.com/rmdrimmie/ballast</a>
+  </p>
 <% end %>
-
-<p>
-  It is still almost identical to the <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-    sample application, from which it was derived.
-</p>
-
