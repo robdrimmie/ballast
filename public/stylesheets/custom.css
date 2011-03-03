@@ -1,3 +1,74 @@
+/*------------------------------------*\
+  RESET
+\*------------------------------------*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0b1 | 201101
+   NOTE:WORK IN PROGRESS
+   USE WITH CAUTION AND TEST WITH ABANDON */
+
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  font:inherit;
+  vertical-align:baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+  display:block;
+}
+body{
+  line-height:1;
+}
+ol,ul{
+  list-style:none;
+}
+blockquote,q{
+  quotes:none;
+}
+blockquote:before,blockquote:after,
+q:before,q:after{
+  content:'';
+  content:none;
+}
+/* remember to define visible focus styles!
+:focus{
+  outline:?????;
+} */
+
+/* remember to highlight inserts somehow! */
+ins{
+  text-decoration:none;
+}
+del{
+  text-decoration:line-through;
+}
+
+table{
+  border-collapse:collapse;
+  border-spacing:0;
+}
+
+/*------------------------------------*\
+  MAIN
+\*------------------------------------*/
+/* GO! */
+
+
 /**
  * http://kuler.adobe.com/#themeID/1241649
  *
@@ -10,8 +81,9 @@
  */
 
 body {
-  color: #4f4247;
   background: #4f4247;
+  color: #4f4247;
+  font-family: sans-serif;
 }
 
 .container {
@@ -19,24 +91,19 @@ body {
   width: 940px;
 }
 
+.clear {
+  clear: both;
+}
+
 header {
 }
 
 section {
-}
-
-section h1 {
+  padding: 15px 0 0 0;
 }
 
 footer {
-  text-align: center;
-  margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer nav {
-  float: none;
+  padding: 0 0 19px 0;
 }
 
 /* Links */
@@ -56,16 +123,19 @@ a:visited {
 }
 
 a.button {
-  margin-left: auto;
-  margin-right: auto;
   display: block;
-  text-align: center;
-  width: 190px;
-
 
   font-size: 150%;
   font-weight: bold;
+
+  line-height: 150%;
+  margin: auto auto;
+
   padding: 20px;
+
+  text-align: center;
+
+  width: 190px;
 }
 
 a.signup {
@@ -116,4 +186,69 @@ a.signout {
 
 #error_explanation ul li {
   list-style-type: square;
+}
+
+/** Forms **/
+div.formContainer {
+  margin: auto auto;
+}
+
+div.formContainer div.field {
+  margin: auto auto;
+  width: 460px;
+}
+
+div.formContainer div.field label {
+  font-size: 150%;
+  font-weight: bold;
+
+  margin: 0 auto;
+  line-height: 150%;
+  width: 460px;
+  text-align: left;
+}
+
+div.formContainer div.field input {
+  font-size: 150%;
+  font-weight: bold;
+
+  margin: 0 auto;
+  line-height: 150%;
+  text-align: center;
+  width: 460px;
+  text-align: left;
+}
+
+div.formContainer div.actions  {
+    margin: auto auto;
+  width: 460px;
+
+}
+
+div.formContainer div.actions input {
+  font-size: 150%;
+  border: 1px solid #4f4247;
+  margin: 15px auto;
+  background: #945A51;
+  color: #fff;
+}
+
+/** home page/marketing stuff */
+div.overview {
+  width: 780px; 
+  margin: 5px 0 0 80px;
+  padding: 0 0px;
+}
+
+p.summary {
+  font-size: 200%;
+  font-weight: bold;  
+  line-height: 200%;
+  text-align: center;
+}
+
+p.details {
+  float: left;
+  padding: 5px;
+  width: 380px;
 }

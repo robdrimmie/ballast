@@ -1,5 +1,4 @@
-<h1>Sign up</h1>
-
+<div class="formContainer">
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   
@@ -23,4 +22,4 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
+</div>

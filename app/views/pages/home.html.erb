@@ -15,16 +15,19 @@
 <% else %>
   <%= link_to "Sign up now!", signup_path, :class => "signup button round" %>
   <%= link_to "Sign in", signin_path, :class => "signin button round" %>
-  <p class="overview">
-    Ballastline is a weight-tracking application. You enter your weight, 
-    and then it gets plotted on a graph. Over time, the line should slope
-    downward if you are losing weight, or upward if you are gaining it.
-  </p>
+  <div class="overview">
+    <p class="summary">Ballastline is a weight-tracking application.</p>
 
-  <p class="overview">
-    It is a hobby project, being developed by Rob Drimmie. I have hopes 
-    for future functionality, but I am not going to talk about them because
-    I am not interested in promising anything. The codebase is available
-    at <a href="https://github.com/rmdrimmie/ballast">https://github.com/rmdrimmie/ballast</a>
-  </p>
+    <p class="details">Enter your weight. It is plotted 
+    on a graph. Over time, the line will slope downward if you are 
+    losing weight, or upward if you are gaining it.
+
+    <p class="details">
+      It is a hobby project, being developed by Rob Drimmie. I have hopes 
+      for future functionality, but I am not going to talk about them because
+      I am not interested in promising anything. The codebase is available
+      at <a href="https://github.com/rmdrimmie/ballast">https://github.com/rmdrimmie/ballast</a>
+    </p>
+    <div class="clear"></div>
+  </div>
 <% end %>

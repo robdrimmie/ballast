@@ -1,12 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+
     <title><%= title %></title>
+
     <%= csrf_meta_tag %>
     <%= render 'layouts/stylesheets' %>
     <%= javascript_include_tag :defaults %>
+    <!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script
+      >
+      createGridder = function() {return;// disabled for live 
+		document.body.appendChild(
+			document.createElement('script'))
+				.src='/javascripts/960.gridder.js';
+	}
+    
+    </script>
+    
   </head>
-  <body>
+  <body id="home" onload="createGridder();">
     <div class="container">
       <%= render 'layouts/header' %>
       <section class="round">
@@ -16,7 +32,7 @@
         <%= yield %>
       </section>
       <%= render 'layouts/footer' %>
-      <%= debug(params) if Rails.env.development? %>
-    </div>
-  </body>
+    </div><%= 
+      debug(params) if Rails.env.development? 
+  %></body>
 </html>
