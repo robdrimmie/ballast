@@ -242,7 +242,7 @@ div.overview {
 
 p.summary {
   font-size: 200%;
-  font-weight: bold;  
+  font-weight: bold;
   line-height: 200%;
   text-align: center;
 }
@@ -251,4 +251,23 @@ p.details {
   float: left;
   padding: 5px;
   width: 380px;
+}
+
+tbody tr:nth-child(even) td, tbody tr.even td {background-color:transparent;}transparent
+
+
+tr.weightrowAM{
+  background-color: #eee;
+}
+
+tr.weightrowPM{
+  background-color: #111;
+}
+
+td.weight {
+  background-color: #EB8A5E;
+}
+
+td.localtime {
+  background-color: #EB8A5E;
 }

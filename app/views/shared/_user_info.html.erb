@@ -6,6 +6,9 @@
     </span>
     <span class="weights">
       <%= pluralize(current_user.weights.count, "weight") %>
+      Highest: <%= current_user.weights.maximum( "weight" ) %>
+      Lowest <%= current_user.weights.minimum( "weight" ) %>
+      
     </span>
   </a>
 </div>

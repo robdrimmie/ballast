@@ -1,19 +1,24 @@
-<tr>
+<%
+  local=feed_item.created_at.in_time_zone('Eastern Time (US & Canada)')
+%>
+<tr class="weightrow<%= local.strftime('%p') %>">
   <td class="weight">
-    <span class="user">
-      <%= link_to feed_item.user.name, feed_item.user %>
-    </span>
-    <span class="weight"><%= feed_item.weight %></span>
-    <span class="timestamp">
-      <%= feed_item.created_at.strftime("%H%M %d %B, %Y") %>
-    </span>
+    <%= feed_item.weight %>
+  </td>
+  <td class="utc">
+    <%= feed_item.created_at.strftime('%I:%M%p %d %B, %Y %Z') %>
+  </td>
+  <td class="localtime">
+    <%= local.strftime('%I:%M%p %d %B, %Y %Z') %>
   </td>
   <% if current_user?(feed_item.user) %>
-  <td>
-    <%= link_to "delete", feed_item, :method => :delete,
-                                     :confirm => "You sure?",
-                                     :title => feed_item.weight %>
-  </td>
+    <td>
+      <%= link_to "delete", feed_item,
+        :method => :delete,
+        :confirm => "You sure?",
+        :title => feed_item.weight
+      %>
+    </td>
   <% end %>
 </tr>
 
