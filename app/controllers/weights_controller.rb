@@ -14,6 +14,6 @@ class WeightsController < ApplicationController
 
 
   def destroy
-
+      @result = Weight.destroy(params[:id])
   end
 end
